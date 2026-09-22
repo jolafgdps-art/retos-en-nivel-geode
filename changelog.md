@@ -1,3 +1,7 @@
+# 1.2.1
+
+- Corrige el ID del mod al formato válido de Geode: jolaf.retosenivel.
+
 # 1.2.0
 
 - Actualiza el autor a Jolaf.
