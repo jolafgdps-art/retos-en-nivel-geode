@@ -3,9 +3,9 @@
     "gd": {
         "android": "2.2081"
     },
-    "id": "retos.challenge.v2",
+    "id": "jolaf.retosenivel",
     "name": "Retos en Nivel",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "developer": "Jolaf",
     "description": "Muestra un reto aleatorio al entrar en un nivel de Geometry Dash.",
     "links": {
