@@ -9,12 +9,13 @@ Al entrar a un nivel muestra un reto aleatorio mediante una notificación de Geo
 - Geometry Dash Android 2.2081
 - Geode 5.10.1
 - Android ARM64 / android64
+- ID del mod: jolaf.retosenivel
 
 ## Descarga
 
-La versión compilada está disponible en la [release pública v1.2.0](https://github.com/jolafgdps-art/retos-en-nivel/releases/tag/v1.2.0).
+La versión compilada está disponible en la [release pública v1.2.1](https://github.com/jolafgdps-art/retos-en-nivel/releases/tag/v1.2.1).
 
-[Descargar el archivo .geode directamente](https://github.com/jolafgdps-art/retos-en-nivel/raw/v1.2.0/releases/retos.challenge.v2-1.2.0.geode)
+[Descargar el archivo .geode directamente](https://github.com/jolafgdps-art/retos-en-nivel/raw/v1.2.1/releases/jolaf.retosenivel-1.2.1.geode)
 
 ## Compilación
 
