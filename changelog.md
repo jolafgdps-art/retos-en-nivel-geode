@@ -1,3 +1,9 @@
+# 1.2.2
+
+- Muestra "Reto completado" al terminar el nivel.
+- Muestra "Reto no completado" al morir, reiniciar o salir del nivel.
+- Evita mostrar el resultado más de una vez por intento.
+
 # 1.2.1
 
 - Corrige el ID del mod al formato válido de Geode: jolaf.retosenivel.
