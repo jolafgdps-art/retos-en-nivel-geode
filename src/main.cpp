@@ -35,15 +35,56 @@ namespace {
 }
 
 class $modify(RetosPlayLayer, PlayLayer) {
+    bool m_retosAttemptStarted = false;
+    bool m_retosLevelCompleted = false;
+    bool m_retosResultShown = false;
+
+    void showChallengeResult(bool completed) {
+        if (m_retosResultShown) {
+            return;
+        }
+
+        m_retosResultShown = true;
+        Notification::create(
+            completed ? "Reto completado" : "Reto no completado",
+            NotificationIcon::Info,
+            NOTIFICATION_LONG_TIME
+        )->show();
+    }
+
     void onEnterTransitionDidFinish() {
         PlayLayer::onEnterTransitionDidFinish();
 
-        // This is called after the level scene has entered, so Notification::show()
-        // has a valid scene on Android as well as on desktop.
+        m_retosAttemptStarted = true;
+        m_retosLevelCompleted = false;
+        m_retosResultShown = false;
+
         Notification::create(
             randomChallenge(),
             NotificationIcon::Info,
             NOTIFICATION_LONG_TIME
         )->show();
+    }
+
+    void levelComplete() {
+        m_retosLevelCompleted = true;
+        showChallengeResult(true);
+        PlayLayer::levelComplete();
+    }
+
+    void resetLevel() {
+        if (m_retosAttemptStarted && !m_retosLevelCompleted) {
+            showChallengeResult(false);
+        }
+
+        PlayLayer::resetLevel();
+    }
+
+    void onQuit() {
+        if (m_retosAttemptStarted && !m_retosLevelCompleted) {
+            showChallengeResult(false);
+        }
+
+        PlayLayer::onQuit();
     }
 };
