@@ -5,9 +5,9 @@
     },
     "id": "jolaf.retosenivel",
     "name": "Retos en Nivel",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "developer": "Jolaf",
-    "description": "Muestra un reto aleatorio al entrar en un nivel de Geometry Dash.",
+    "description": "Muestra un reto aleatorio y avisa si el intento se completó o no.",
     "links": {
         "community": "https://discord.gg/MGJ67skaG5"
     },
