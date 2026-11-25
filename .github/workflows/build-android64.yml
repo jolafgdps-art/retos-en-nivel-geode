@@ -36,6 +36,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Retos-en-Nivel-Android64
-          path: 4{{ steps.build.outputs.build-output }}
+          path: ${{ steps.build.outputs.build-output }}
           if-no-files-found: error
           retention-days: 14
