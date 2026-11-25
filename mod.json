@@ -1,5 +1,5 @@
 {
-  "geode": "v6.0.0",
+  "geode": "6.0.0",
   "gd": {
     "android": "2.2091"
   },
@@ -12,5 +12,8 @@
     "community": "https://discord.gg/MGJ67skaG5",
     "source": "https://github.com/jolafgdps-art/retos-en-nivel-geode"
   },
-  "tags": ["offline", "gameplay"]
+  "tags": [
+    "offline",
+    "gameplay"
+  ]
 }
