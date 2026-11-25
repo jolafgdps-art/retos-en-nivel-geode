@@ -1,3 +1,8 @@
+# 1.2.4
+
+- Actualiza la compatibilidad a Geometry Dash Android 2.2091 y Geode oficial v6.0.0.
+- Mantiene los retos aleatorios y los avisos de resultado de cada intento.
+
 # 1.2.2
 
 - Muestra "Reto completado" al terminar el nivel.

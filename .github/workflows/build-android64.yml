@@ -1,0 +1,41 @@
+name: Build Android64
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "CMakeLists.txt"
+      - "mod.json"
+      - "src/**"
+      - ".github/workflows/build-android64.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "CMakeLists.txt"
+      - "mod.json"
+      - "src/**"
+      - ".github/workflows/build-android64.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Geode mod for Android64
+        id: build
+        uses: geode-sdk/build-geode-mod@dce36b35e1c3d9d8af92347760b12eba3caf4004
+        with:
+          sdk: given
+          target: Android64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Retos-en-Nivel-Android64
+          path: 4{{ steps.build.outputs.build-output }}
+          if-no-files-found: error
+          retention-days: 14
