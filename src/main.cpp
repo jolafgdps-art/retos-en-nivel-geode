@@ -35,16 +35,18 @@ namespace {
 }
 
 class $modify(RetosPlayLayer, PlayLayer) {
-    bool m_retosAttemptStarted = false;
-    bool m_retosLevelCompleted = false;
-    bool m_retosResultShown = false;
+    struct Fields {
+        bool attemptStarted = false;
+        bool levelCompleted = false;
+        bool resultShown = false;
+    };
 
     void showChallengeResult(bool completed) {
-        if (m_retosResultShown) {
+        if (m_fields->resultShown) {
             return;
         }
 
-        m_retosResultShown = true;
+        m_fields->resultShown = true;
         Notification::create(
             completed ? "Reto completado" : "Reto no completado",
             NotificationIcon::Info,
@@ -55,9 +57,9 @@ class $modify(RetosPlayLayer, PlayLayer) {
     void onEnterTransitionDidFinish() {
         PlayLayer::onEnterTransitionDidFinish();
 
-        m_retosAttemptStarted = true;
-        m_retosLevelCompleted = false;
-        m_retosResultShown = false;
+        m_fields->attemptStarted = true;
+        m_fields->levelCompleted = false;
+        m_fields->resultShown = false;
 
         Notification::create(
             randomChallenge(),
@@ -67,13 +69,13 @@ class $modify(RetosPlayLayer, PlayLayer) {
     }
 
     void levelComplete() {
-        m_retosLevelCompleted = true;
+        m_fields->levelCompleted = true;
         showChallengeResult(true);
         PlayLayer::levelComplete();
     }
 
     void resetLevel() {
-        if (m_retosAttemptStarted && !m_retosLevelCompleted) {
+        if (m_fields->attemptStarted && !m_fields->levelCompleted) {
             showChallengeResult(false);
         }
 
@@ -81,7 +83,7 @@ class $modify(RetosPlayLayer, PlayLayer) {
     }
 
     void onQuit() {
-        if (m_retosAttemptStarted && !m_retosLevelCompleted) {
+        if (m_fields->attemptStarted && !m_fields->levelCompleted) {
             showChallengeResult(false);
         }
 
